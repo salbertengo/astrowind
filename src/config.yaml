@@ -1,6 +1,6 @@
 site:
   name: Pampa&Código
-  site: 'https://astrowind.vercel.app'
+  site: 'https://pampacodigo.com/'
   base: '/'
   trailingSlash: false
 
@@ -9,14 +9,14 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: AstroWind
+    default: Pampa & Código
     template: '%s — AstroWind'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+  description: "\U0001F680 Inventario para Pymes, comercios, gestión de turnos, sistemas de inventario."
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind
+    site_name: Pampa&Código
     images:
       - url: '~/assets/images/default.png'
         width: 1200
