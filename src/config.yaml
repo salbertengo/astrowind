@@ -1,5 +1,5 @@
 site:
-  name: AstroWind
+  name: Pampa&Código
   site: 'https://astrowind.vercel.app'
   base: '/'
   trailingSlash: false
@@ -28,9 +28,13 @@ metadata:
     cardType: summary_large_image
 
 i18n:
-  language: en
+  language: es
   textDirection: ltr
 
+
+
+
+    
 apps:
   blog:
     isEnabled: true
