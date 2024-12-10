@@ -4,10 +4,11 @@ import Logo from '~/components/Logo.astro';
 import ToggleTheme from '~/components/common/ToggleTheme.astro';
 import ToggleMenu from '~/components/common/ToggleMenu.astro';
 import Button from '~/components/ui/Button.astro';
-
+import Image from '~/components/common/Image.astro';
 import { getHomePermalink } from '~/utils/permalinks';
 import { trimSlash, getAsset } from '~/utils/permalinks';
 import type { CallToAction } from '~/types';
+import { headerData } from '~/navigation';
 
 interface Link {
   text?: string;
@@ -34,9 +35,8 @@ export interface Props {
 
 const {
   id = 'header',
-  links = [],
-  actions = [],
-  isSticky = false,
+  links = headerData.links,
+  actions = headerData.actions,
   isDark = false,
   isFullWidth = false,
   showToggleTheme = false,
@@ -47,18 +47,68 @@ const {
 const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
 ---
 
+<header>
+  <div class="header-principal">
+    <!-- Contenido del header actual -->
+  </div>
+  
+  <div class="subheader">
+    <!-- Contenido del subheader -->
+    <div class="max-w-7xl mx-auto px-4">
+      <nav class="flex justify-between">
+        <!-- Contenido adicional -->
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="bg-gradient-to-r from-[#0E416D] to-[#1a5c99]">
+  <div
+    class:list={[
+      'relative text-default py-1 px-3 md:px-6 mx-auto w-full',
+      {
+        'md:flex md:justify-between': position !== 'center',
+      },
+      {
+        'md:grid md:grid-cols-3 md:items-center': position === 'right',
+      },
+      {
+        'max-w-7xl': !isFullWidth,
+      },
+    ]}
+  >
+    <div class="flex justify-between items-center text-sm text-white">
+      <div class="flex items-center space-x-4 rtl:space-x-reverse">
+        <a href={getHomePermalink()} class="flex items-center">
+          <Image
+            src="~/assets/images/logopampa.png"
+            alt="Logo Pampa"
+            class="w-auto h-8 object-cover object-center"
+            width={200}
+            height={70}
+          />
+        </a>
+      </div>
+      <div class="flex items-center space-x-4 rtl:space-x-reverse">
+        <a href="#" class="hover:text-gray-200">Soporte</a>
+        <a href="#" class="hover:text-gray-200">FAQ</a>
+      </div>
+    </div>
+  </div>
+</div>
+
 <header
   class:list={[
-    { sticky: isSticky, relative: !isSticky, dark: isDark },
-    'top-0 z-40 flex-none mx-auto w-full border-b border-gray-50/0 transition-[opacity] ease-in-out',
+    { dark: isDark },
+    'relative z-40 flex-none mx-auto w-full border-b border-gray-50/0',
   ]}
-  {...isSticky ? { 'data-aw-sticky-header': true } : {}}
   {...id ? { id } : {}}
 >
   <div class="absolute inset-0"></div>
+  
   <div
     class:list={[
-      'relative text-default py-3 px-3 md:px-6 mx-auto w-full',
+      'relative text-default py-1 px-3 md:px-6 mx-auto w-full',
       {
         'md:flex md:justify-between': position !== 'center',
       },
@@ -138,7 +188,17 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
       <div class="items-center flex justify-between w-full md:w-auto">
         <div class="flex">
           {showToggleTheme && <ToggleTheme iconClass="w-6 h-6 md:w-5 md:h-5 md:inline-block" />}
-
+          {
+            showRssFeed && (
+              <a
+                class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
+                aria-label="RSS Feed"
+                href={getAsset('/rss.xml')}
+              >
+                <Icon name="tabler:rss" class="w-5 h-5" />
+              </a>
+            )
+          }
         </div>
         {
           actions?.length ? (

@@ -2,6 +2,7 @@
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import ContactUs from '~/components/widgets/Contact.astro';
+import Note  from '~/components/widgets/Note.astro';
 
 const metadata = {
   title: 'Contacto',
@@ -24,32 +25,18 @@ const metadata = {
   </div>
 <!-- end Google Calendar Appointment Scheduling -->
 
-  <ContactUs
-    id="form"
-    title="Alternativa: Comunicate por mail."
-    subtitle="Si tenés una consulta sobre nuestros servicios o te gustaría una reunión presencial, envianos un mail."
-    inputs={[
+  <Note
+    title="¿No encontraste el horario que buscabas?"
+    subtitle="No te preocupes, podés enviarme un mensaje directo y coordinamos una reunión."
+    actions={[
       {
-        type: 'text',
-        name: 'name',
-        label: 'Nombre',
-      },
-      {
-        type: 'email',
-        name: 'email',
-        label: 'Email',
+        variant: 'primary',
+        text: 'Enviar mensaje',
+        href: '/contact',
+        target: '_blank',
+        icon: 'tabler:phone',
       },
     ]}
-    textarea={{
-      label: 'Mensaje',
-    }}
-    disclaimer={{
-      label:
-        'Al enviar este formulario de contacto, reconoces y aceptas la recopilación de tu información personal.',
-
-    }}
-    description="Usualmente respondemos en un plazo menor a 24 horas."
-  />
-
+  
 
 </Layout>

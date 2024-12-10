@@ -10,8 +10,19 @@ export const headerData = {
       text: 'Blog',
       href: getBlogPermalink(),
     },
+    {
+      text: 'Servicios',
+      links:[
+        
+        { text: 'Desarrollo',
+          href: getPermalink('/servicios/desarrollo'),
+        }
+        ]
+    }
   ],
   actions: [{ text: 'Agendá una llamada.', href: getPermalink('/contact'), target: '_blank' }],
+
+
 };
 
 export const footerData = {
