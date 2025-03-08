@@ -3,7 +3,7 @@ import { getPermalink, getBlogPermalink } from './utils/permalinks';
 export const headerData = {
   links: [
     {
-      text: 'Inicio',
+      text: 'Beginning',
       href: getPermalink('/'),
     },
     {
@@ -11,16 +11,16 @@ export const headerData = {
       href: getBlogPermalink(),
     },
     {
-      text: 'Servicios',
+      text: 'Services',
       links:[
         
-        { text: 'Desarrollo',
+        { text: 'Development',
           href: getPermalink('/servicios/desarrollo'),
         }
         ]
     }
   ],
-  actions: [{ text: 'Agendá una llamada.', href: getPermalink('/contact'), target: '_blank' }],
+  actions: [{ text: 'Schedule a call.', href: getPermalink('/contact'), target: '_blank' }],
 
 
 };
@@ -28,12 +28,12 @@ export const headerData = {
 export const footerData = {
   links: [
     {
-      title: 'Empresa',
+      title: 'Enterprise',
       links: [
-        { text: 'Sobre nosotros', href: '#' },
+        { text: 'About us', href: '#' },
         { text: 'Blog', href: '#' },
-        { text: 'Carreras', href: '#' },
-        { text: 'Prensa', href: '#' },
+        { text: 'Careers', href: '#' },
+        { text: 'Press', href: '#' },
       ],
     },
   ],
@@ -46,6 +46,6 @@ export const footerData = {
     { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: 'https://www.instagram.com/pampacodigo/' },
   ],
   footNote: `
-    Pampa&Código. Todos los derechos reservados.
+    Pampa&Código. All rights reserved.
   `,
 };
