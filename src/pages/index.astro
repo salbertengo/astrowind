@@ -1,6 +1,5 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import Hero from '~/components/widgets/Hero.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
@@ -13,6 +12,7 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
+<<<<<<< Updated upstream
   <Hero
     actions={[
       {
@@ -46,6 +46,101 @@ const metadata = {
       title="We want that you see results."
       subtitle="We are interested on thinking, being self-reflective and listening our clients. We won't sell you solutions that you may not need. Always we seek the simplest way to solve or enhance your systems."
     >
+=======
+  <!-- Nuevo componente principal con fondo #030620 -->
+  <section class="bg-[#030620] w-full">
+    <div class="mx-auto w-[1360px] h-[981px] flex flex-col gap-[100px] py-16">
+      
+      <!-- Componente superior -->
+      <div class="w-[1360px] h-[502px] flex justify-between items-center">
+        <!-- Parte izquierda -->
+        <div class="w-[654px] h-[376px] flex flex-col gap-[40px]">
+          <!-- Título -->
+          <h1 class="w-[654px] h-[134px] font-epilogue font-semibold text-[56px] leading-[120%] tracking-normal text-white">
+            Controla Tu inventario<br/>
+            A tu manera
+          </h1>
+          
+          <!-- Subtítulo -->
+          <p class="w-[654px] h-[44px] font-inter font-medium text-[18px] leading-[120%] tracking-normal text-white">
+            Creamos sistemas de gestión flexibles y simples para adaptarnos a tu forma de trabajar.
+          </p>
+          
+          <!-- Botón -->
+          <a href="/contact" class="w-[184px] h-[56px] flex items-center justify-center gap-[10px] py-[16px] px-[20px] bg-primary text-white font-inter font-medium text-base rounded-[24px] hover:bg-secondary transition-colors">
+            Empezá ahora
+          </a>
+        </div>
+        
+        <!-- Parte derecha - Deslizador de Antes/Después -->
+        <div class="w-[706px] h-[502px] relative overflow-hidden rounded-lg">
+          <!-- Capa "Antes" (fondo base) con imagen BEFORE.png -->
+          <div class="absolute inset-0">
+            <!-- Updated image with specific padding values -->
+            <div class="absolute inset-0" style="padding-top: 745px; padding-right: 374px; padding-bottom: 115.5741px; padding-left: 430px;">
+              <img 
+                src="/src/assets/images/BEFORE.png"
+                alt="Sistema de inventario tradicional" 
+                class="absolute w-full h-full object-contain"
+              />
+            </div>
+            <!-- Replaced solid black overlay with linear gradient -->
+            <div class="absolute inset-0 flex items-center justify-center" 
+                 style="background: linear-gradient(to right, rgba(3, 6, 32, 0.7), rgba(29, 35, 81, 0.7));">
+              <div class="text-white text-2xl font-epilogue p-8 text-center">
+                Sistema de inventario tradicional
+                <p class="text-sm mt-4 font-inter">Procesos manuales, errores frecuentes</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Capa "Después" (se revelará con el deslizador) con color sólido -->
+          <div id="after-layer" class="absolute inset-0 flex items-center justify-center bg-[#0F172A]" style="background: linear-gradient(to right, #030620, #1D2351);">
+            <div class="text-white text-2xl font-epilogue p-8 text-center">
+            </div>
+          </div>
+          
+          <!-- Deslizador (posicionado al 80%) -->
+          <div id="slider" class="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize" style="left: 80%;">
+            <div class="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-white flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-800">
+                <path d="M13 17l5-5-5-5M6 17l5-5-5-5" />
+              </svg>
+            </div>
+          </div>
+          
+          <!-- Etiquetas -->
+        </div>
+      </div>
+      
+      <!-- Componente inferior -->
+      <div class="w-[1280px] h-[379px] mx-auto flex flex-col gap-[56px]">
+        <h2 class="text-white text-headline text-center">Nuestras Soluciones</h2>
+        <div class="grid grid-cols-3 gap-8">
+          <div class="bg-[#0F1730] p-6 rounded-lg text-white">
+            <h3 class="font-epilogue text-xl mb-4">Sistemas de Inventario</h3>
+            <p class="text-white/80">Control completo de stock, movimientos y reportes personalizados para tu negocio.</p>
+          </div>
+          <div class="bg-[#0F1730] p-6 rounded-lg text-white">
+            <h3 class="font-epilogue text-xl mb-4">Integración con POS</h3>
+            <p class="text-white/80">Conectamos tu sistema de inventario con tu punto de venta para mantener todo sincronizado.</p>
+          </div>
+          <div class="bg-[#0F1730] p-6 rounded-lg text-white">
+            <h3 class="font-epilogue text-xl mb-4">Gestión de Almacén</h3>
+            <p class="text-white/80">Optimiza el espacio y la logística de tu almacén con nuestras soluciones a medida.</p>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- Features2 Widget ************** -->
+  <Features2
+    title="Queremos que veas resultados."
+    subtitle="Nos interesa pensar, ser autoreflexivos y escuchar a nuestros clientes. No te venderemos soluciones que quizás no necesites, siempre buscamos la forma más simple de resolver o mejorar tus sistemas."
+  >
+>>>>>>> Stashed changes
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
@@ -63,10 +158,13 @@ const metadata = {
     ]}
   />
 
+<<<<<<< Updated upstream
 
 
 
 
+=======
+>>>>>>> Stashed changes
   <!-- Features2 Widget ************** -->
 
   <Features2
@@ -98,8 +196,6 @@ const metadata = {
     </Fragment>
   </Features2>
 
-
- 
   <!-- FAQs Widget ******************* -->
 
   <FAQs
@@ -143,11 +239,77 @@ const metadata = {
     </Fragment>
   </BlogLatestPosts>
 
-
-  <!-- CallToAction Widget *********** -->
-
- 
-
-
-
 </Layout>
+
+<script>
+  // Función para el deslizador de antes/después
+  document.addEventListener('DOMContentLoaded', function() {
+    const slider = document.getElementById('slider');
+    const afterLayer = document.getElementById('after-layer');
+    let isDown = false;
+    
+    if (slider && afterLayer) {
+      // Inicializar al 80%
+      slider.style.left = '80%';
+      afterLayer.style.clipPath = 'inset(0 20% 0 0)';
+      
+      // Funciones para manejar el arrastre del deslizador
+      function handleMouseDown(e) {
+        isDown = true;
+      }
+      
+      function handleMouseMove(e) {
+        if (!isDown) return;
+        
+        // Calcular la posición relativa dentro del contenedor padre
+        const container = slider.parentElement;
+        const rect = container.getBoundingClientRect();
+        let x = e.clientX - rect.left;
+        
+        // Limitar el rango de movimiento dentro del contenedor
+        if (x < 0) x = 0;
+        if (x > rect.width) x = rect.width;
+        
+        // Actualizar la posición del deslizador
+        const percent = (x / rect.width) * 100;
+        slider.style.left = `${percent}%`;
+        
+        // Actualizar la revelación de la capa "después"
+        afterLayer.style.clipPath = `inset(0 ${100 - percent}% 0 0)`;
+      }
+      
+      function handleMouseUp() {
+        isDown = false;
+      }
+      
+      // Agregar event listeners
+      slider.addEventListener('mousedown', handleMouseDown);
+      document.addEventListener('mousemove', handleMouseMove);
+      document.addEventListener('mouseup', handleMouseUp);
+      
+      // Soporte para dispositivos táctiles
+      slider.addEventListener('touchstart', (e) => {
+        isDown = true;
+      }, { passive: true });
+      
+      document.addEventListener('touchmove', (e) => {
+        if (!isDown) return;
+        const touch = e.touches[0];
+        const container = slider.parentElement;
+        const rect = container.getBoundingClientRect();
+        let x = touch.clientX - rect.left;
+        
+        if (x < 0) x = 0;
+        if (x > rect.width) x = rect.width;
+        
+        const percent = (x / rect.width) * 100;
+        slider.style.left = `${percent}%`;
+        afterLayer.style.clipPath = `inset(0 ${100 - percent}% 0 0)`;
+      }, { passive: true });
+      
+      document.addEventListener('touchend', () => {
+        isDown = false;
+      }, { passive: true });
+    }
+  });
+</script>

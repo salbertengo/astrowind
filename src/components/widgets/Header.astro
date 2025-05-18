@@ -1,14 +1,12 @@
 ---
 
-import ToggleMenu from '~/components/common/ToggleMenu.astro';
-import Button from '~/components/ui/Button.astro';
+
 import Image from '~/components/common/Image.astro';
 
 import { getHomePermalink } from '~/utils/permalinks';
 import { trimSlash, getAsset } from '~/utils/permalinks';
 import type { CallToAction } from '~/types';
 import { headerData } from '~/navigation';
-import { getPermalink } from '~/utils/permalinks';
 
 interface Link {
   text?: string;
@@ -35,23 +33,22 @@ export interface Props {
 
 const {
   id = 'header',
-  links = headerData.links,
-  actions = headerData.actions,
   isDark = false,
-  isFullWidth = false,
 
-  position = 'center',
 } = Astro.props;
 
-const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
 
 
+<<<<<<< Updated upstream
 const headerInferiorLinks = [
   { text: 'Uses', href: '/' },
   { text: 'Industries', href: '/' },
   { text: 'Size', href: '/' },
   { text: 'Contact', href: '/' },
 ];
+=======
+
+>>>>>>> Stashed changes
 ---
 
 <!-- Header Superior -->
@@ -62,94 +59,67 @@ const headerInferiorLinks = [
   ]}
   {...id ? { id } : {}}
 >
-  <div class="absolute inset-0 bg-gradient-to-t from-[#0F426E] to-[#0F426E]/80"></div>
+  <div class="absolute inset-0 bg-[#030620]"></div>
   
-  <div class="relative text-white py-2 md:py-4 px-3 md:px-6 mx-auto w-full">
-    <div class="flex justify-between items-center">
+  <div class="relative text-white w-[1440px] h-[132px] mx-auto py-[32px] px-[80px] flex items-center">
+    <div class="flex justify-between items-center w-full">
       <a class="flex items-center" href={getHomePermalink()}>
         <Image 
           src="~/assets/images/logopampa.png" 
           alt="Pampa&Código"
-          class="h-12 md:h-16 lg:h-20 w-auto ml-8 mt-1 md:ml-12 md:mt-2"
+          class="w-[170px] h-[68px] object-contain"
         />
       </a>
       
-      <div class="flex flex-col items-end gap-2 mr-8 md:mr-16">
+      <div class="flex items-center h-11">
         <nav
-          class="items-center w-full md:w-auto hidden md:flex text-white/80 overflow-y-auto overflow-x-hidden md:overflow-y-visible md:overflow-x-auto"
+          class="items-center w-auto hidden md:flex"
           aria-label="Main navigation"
         >
-          <ul class="flex flex-row md:self-center w-full md:w-auto text-xl md:text-[0.9375rem] tracking-[0.01rem] font-medium">
+          <ul class="flex items-center w-[398px] h-[44px] gap-[40px]">
             {
-              links.map(({ text, href }, index) => (
+              [
+                { text: 'Services', href: '/services' },
+                { text: 'Blog', href: '/blog' },
+                { text: 'Contact Us', href: '/contact' }
+              ].map(({ text, href }, index) => (
                 <li class="flex items-center">
                   <a
-                    class="text-white/70 hover:text-white uppercase font-semibold px-4 py-2 flex items-center whitespace-nowrap transition-colors duration-200"
+                    class="font-epilogue font-normal text-[20px] leading-[120%] text-white hover:text-white/80 transition-colors duration-200"
                     href={href}
                   >
                     {text}
                   </a>
-                  {index < links.length - 1 && (
-                    <span class="text-white/40">|</span>
-                  )}
                 </li>
               ))
             }
           </ul>
         </nav>
-
-        <div class="flex items-center">
-          <div class="flex md:hidden">
-            <ToggleMenu />
-          </div>
-          {
-            actions?.length ? (
-              <span class="ml-4 rtl:ml-0 rtl:mr-4">
-                {actions.map((btnProps) => (
-                  <Button 
-                    {...btnProps} 
-                    class="ml-2 py-2 px-5.5 md:px-6 font-semibold shadow-none text-sm w-auto bg-[#FF5733] hover:bg-[#FF5733]/90 text-white"
-                  />
-                ))}
-              </span>
-            ) : (
-              ''
-            )
-          }
-        </div>
       </div>
     </div>
   </div>
 </header>
 
-<!-- Header inferior -->
-<header
-  class:list={[
-    { dark: isDark },
-    'relative z-30 flex-none mx-auto w-full border-b border-gray-50/0',
-  ]}
->
-  <div class="absolute inset-0 bg-gradient-to-t from-[#ffffff] to-[#ffffff]/80"></div>
-  
-  <div class="relative text-[#0F426E] py-0 px-3 md:px-6 mx-auto w-full">
-    <nav
-      class="items-center w-full md:w-auto hidden md:flex text-[#0F426E] overflow-y-auto overflow-x-hidden md:overflow-y-visible md:overflow-x-auto md:justify-start h-full"
-      aria-label="Secondary navigation"
-    >
-      <ul class="flex flex-col md:flex-row md:self-center w-full md:w-auto text-xl md:text-[0.9375rem] tracking-[0.01rem] font-bold uppercase md:justify-start md:gap-8 h-full">
-        {
-          headerInferiorLinks.map(({ text, href }) => (
-            <li class="h-full">
-              <a
-                class="text-[#0F426E] hover:text-[#4A90E2] px-4 py-3 flex items-center whitespace-nowrap transition-colors duration-200 hover:bg-[#0F426E]/10 h-full"
-                href={href}
-              >
-                {text}
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </nav>
+<!-- Mobile navigation - solo visible en pantallas pequeñas -->
+<div class="md:hidden bg-[#030620] text-white py-4">
+  <div class="container mx-auto px-4">
+    <ul class="flex flex-col items-center gap-4">
+      {
+        [
+          { text: 'Services', href: '/services' },
+          { text: 'Blog', href: '/blog' },
+          { text: 'Contact Us', href: '/contact' }
+        ].map(({ text, href }) => (
+          <li>
+            <a 
+              class="font-epilogue font-normal text-[18px] leading-[120%] text-white hover:text-white/80"
+              href={href}
+            >
+              {text}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
   </div>
-</header>
+</div>
