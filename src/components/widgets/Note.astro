@@ -1,5 +1,17 @@
 ---
 import { Icon } from 'astro-icon/components';
+
+export interface Props {
+  icon?: string;
+  title?: string;
+  description?: string;
+}
+
+const {
+  icon = 'tabler:info-square',
+  title = await Astro.slots.render('title'),
+  description = await Astro.slots.render('description'),
+} = Astro.props;
 ---
 
 <section class="bg-blue-50 dark:bg-slate-800 not-prose">
