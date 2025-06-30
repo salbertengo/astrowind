@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Support – GPT Cold Email Generator</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+body{font-family:Arial,Helvetica,sans-serif;max-width:900px;margin:0 auto;padding:2rem;line-height:1.6;color:#333}
+h1{margin-top:0;color:#007bff}
+h2{margin:2rem 0 .8rem}
+a{color:#007bff}
+code{background:#f1f3f5;padding:.1rem .25rem;border-radius:4px;font-size:90%}
+.faq details{background:#fafafa;border:1px solid #e9ecef;border-radius:6px;padding:1rem;margin-bottom:.8rem}
+.faq summary{cursor:pointer;font-weight:600}
+.contact{background:#e8f5e9;padding:1rem;border-radius:6px;margin:1.5rem 0}
+hr{border:none;border-top:1px solid #e9ecef;margin:2.5rem 0}
+</style>
+</head>
+<body>
+
+<h1>GPT Cold Email Generator – Support Hub</h1>
+
+<p class="contact">
+<strong>Need help fast?</strong><br>
+Email us at <a href="mailto:santiago@pampacodigo.com">santiago@pampacodigo.com</a>  
+We reply within 24 h on business days.
+</p>
+
+<h2>Quick links</h2>
+<ul>
+  <li><a href="#install">Installation &amp; authorisation</a></li>
+  <li><a href="#usage">Generating emails</a></li>
+  <li><a href="#billing">Billing &amp; licence</a></li>
+  <li><a href="#privacy">Data &amp; privacy</a></li>
+</ul>
+
+<hr>
+
+<h2 id="install">Installation &amp; authorisation</h2>
+<div class="faq">
+  <details open>
+    <summary>“The add-on can’t access my sheet”</summary>
+    <p>Open <strong>Extensions ▸ Apps Script ▸ Project Settings</strong> and
+    click <em>Revoke authorisation</em>, then reinstall the add-on and
+    approve the Google consent screen again.</p>
+  </details>
+
+  <details>
+    <summary>“Install button is greyed out”</summary>
+    <p>Your Workspace admin may have blocked third-party add-ons. Ask them
+    to allow <code>GPT Cold Email Generator (ID: 313836988626)</code>.</p>
+  </details>
+</div>
+
+<h2 id="usage">Generating emails</h2>
+<div class="faq">
+  <details>
+    <summary>“Generate Emails button is disabled”</summary>
+    <p>Make sure you have:<br>
+    • Selected a URL range (mandatory)<br>
+    • Selected an <em>Output Body</em> range<br>
+    • Saved your company details.<br>
+    All other ranges are optional.</p>
+  </details>
+
+  <details>
+    <summary>“I get ‘Free trial expired’ but I only generated 12 emails”</summary>
+    <p>Your personal counter is stored in <code>UserProperties</code>.
+    Clearing browser data does <em>not</em> reset it.  
+    If you believe the counter is wrong, email us and we’ll extend your quota.</p>
+  </details>
+</div>
+
+<h2 id="billing">Billing &amp; licence</h2>
+<div class="faq">
+  <details>
+    <summary>Lifetime licence vs. monthly plan</summary>
+    <p>The in-add-on payment (USD 49) unlocks the UI forever.
+    After that you add <strong>your own OpenAI key</strong> and pay usage
+    (~0.002 USD/email) directly to OpenAI.<br><br>
+    Prefer a managed monthly plan where we keep paying the tokens?
+    Email <a href="mailto:santiago@pampacodigo.com">santiago@pampacodigo.com</a>.</p>
+  </details>
+
+  <details>
+    <summary>“How do I add / update my OpenAI key?”</summary>
+    <p>Sidebar ▸ <strong>Manage API Key</strong> → paste your <code>sk-…</code> key.
+    The key is encrypted and can be deleted anytime.</p>
+  </details>
+</div>
+
+<h2 id="privacy">Data &amp; Privacy</h2>
+<p>See our full <a href="./privacy.html">Privacy&nbsp;Policy</a>.
+Key points:</p>
+<ul>
+  <li>Your sheet data and scraped HTML are never stored server-side.</li>
+  <li>API keys live in encrypted <code>UserProperties</code> tied to <em>your</em> Google account.</li>
+  <li>We share nothing except prompt text with OpenAI to generate the emails.</li>
+</ul>
+
+<hr>
+<p style="text-align:center;font-size:.9rem;color:#6c757d">
+© 2025 Pampa&nbsp;&amp;&nbsp;Código – Last updated 25 Jun 2025
+</p>
+</body>
+</html>
